@@ -73,7 +73,11 @@ class MainActivity : AppCompatActivity()
 
     private fun addSubtractCalculate(passedList: MutableList<Any>): Float
     {
+        var result = passedList[0] as Float
 
+        for (i in passedList.indices)
+
+        return result
     }
 
     private fun timesDivisionCalculate(passedList: MutableList<Any>): MutableList<Any>

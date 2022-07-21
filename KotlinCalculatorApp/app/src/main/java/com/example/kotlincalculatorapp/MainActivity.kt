@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity()
             {
                 val operator = passedList[i]
                 val prevDigit = passedList[i - 1] as Float
-                val nextDigit = passedList[i + ] as Float
+                val nextDigit = passedList[i + 1] as Float
                 when(operator)
                 {
                     'x' ->

@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity()
         if (timesDivision.isEmpty()) return ""
 
         val result = addSubtractCalculate(timesDivision)
-        return Float.toString()
+        return result.toString()
     }
 
     private fun addSubtractCalculate(passedList: MutableList<Any>): Float
@@ -76,6 +76,17 @@ class MainActivity : AppCompatActivity()
         var result = passedList[0] as Float
 
         for (i in passedList.indices)
+        {
+            if (passedList[i] is Char && i != passedList.lastIndex)
+            {
+                val operator = passedList[i]
+                val nextDigit = passedList[i + 1] as Float
+                if (operator == '+')
+                    result += nextDigit
+                if (operator == '-')
+                    result -= nextDigit
+            }
+        }
 
         return result
     }
@@ -100,8 +111,8 @@ class MainActivity : AppCompatActivity()
             if (passedList[i] is Char && i != passedList.lastIndex && i < restartIndex)
             {
                 val operator = passedList[i]
-                val prevDigit = passedList[i] as Float
-                val nextDigit = passedList[i] as Float
+                val prevDigit = passedList[i - 1] as Float
+                val nextDigit = passedList[i + 1] as Float
                 when(operator)
                 {
                     'x' ->

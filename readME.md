@@ -1,1 +1,1 @@
-A simple calculator app using Kotlin
+# A simple calculator app using Kotlin.
